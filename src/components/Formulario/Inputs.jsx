@@ -125,7 +125,7 @@ const Inputs = (props) => {
       {EstadoApodo.Validacion !== null && EstadoApodo.Validacion < true && (
         <DivApodo>
           <Text>
-            Apodo entre 1 y 40 caracteres con letras, espacios y acentos
+            Apodo entre 2 y 15 caracteres con letras, espacios y acentos
           </Text>
         </DivApodo>
       )}

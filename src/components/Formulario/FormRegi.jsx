@@ -12,7 +12,7 @@ const FormRegi = (props) => {
 
   const ExpresionesRegulares = {
     Usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-    Apodo: /^[a-zA-ZÀ-ÿ\S]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    Apodo: /^[a-zA-ZÀ-ÿ\S]{2,15}$/, // Letras y espacios, pueden llevar acentos.
     Email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     Contraseña: /^.{4,12}$/, // 4 a 12 digitos.
   };
