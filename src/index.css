@@ -1,0 +1,24 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+}
+
+p,
+input,
+label,
+a,
+button,
+select,
+textarea {
+  font-size: 18px;
+}
