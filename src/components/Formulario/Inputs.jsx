@@ -18,7 +18,6 @@ const Inputs = (props) => {
     ExpresionApodo,
     ExpresionEmail,
     ExpresionContraseña,
-    Mach,
   } = props;
 
   const OnChangeUser = (e) => {
@@ -71,18 +70,23 @@ const Inputs = (props) => {
     if (ExpresionContraseña) {
       if (ExpresionContraseña.test(EstadoContraseña.Texto)) {
         SetEstadoContraseña({ ...EstadoContraseña, Validacion: true });
+        ValidacionConfirmar();
       } else {
         SetEstadoContraseña({ ...EstadoContraseña, Validacion: false });
-        if (EstadoConfirmar.Texto !== EstadoConfirmar.Texto) {
-          ValidacionConfirmar();
-        }
+        ValidacionConfirmar();
       }
     }
   };
 
+  const isEmpty = (input) => {
+    return input === "" ? false : true;
+  };
+  
   const ValidacionConfirmar = (e) => {
+    const empty = isEmpty(EstadoConfirmar.Texto);
+  
     if (EstadoContraseña.Texto === EstadoConfirmar.Texto) {
-      SetEstadoConfirmar({ ...EstadoConfirmar, Validacion: true });
+      SetEstadoConfirmar({ ...EstadoConfirmar, Validacion: empty });
     } else {
       SetEstadoConfirmar({ ...EstadoConfirmar, Validacion: false });
     }

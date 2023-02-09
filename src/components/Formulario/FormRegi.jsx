@@ -15,6 +15,7 @@ const FormRegi = (props) => {
     Apodo: /^[a-zA-ZÀ-ÿ\S]{2,15}$/, // Letras y espacios, pueden llevar acentos.
     Email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     Contraseña: /^.{4,12}$/, // 4 a 12 digitos.
+    Espacios: /^[^\s].*/,
   };
 
   const OnSubmit = (Event) => {
