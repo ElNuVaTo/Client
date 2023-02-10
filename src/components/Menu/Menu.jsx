@@ -1,14 +1,36 @@
 import React from "react";
 import InputStyled from "./InputMenu";
 import styled from "styled-components";
+import OpcionesButton from "./OpcionesButton";
 
 const Menu = () => {
   return (
-    <Div>
-      <InputStyled 
-      NameLabel={"Buscar"} 
-      Name={"Buscador"} Type={"text"} />
-    </Div>
+    <>
+      <Div>
+        <InputStyled NameLabel={"Buscar"} Name={"Buscador"} Type={"text"} />
+        <i class="bi bi-search"></i>
+      </Div>
+
+      <div>
+        <OpcionesButton Text={"Inicio"}/>
+        <i class="bi bi-house"></i>
+      </div>
+        <div>
+          <OpcionesButton Text={"Explorar"} />
+          <i class="bi bi-compass"></i>
+        </div>
+        <div>
+          <OpcionesButton Text={"Reels"} />
+        </div>
+        <div>
+          <OpcionesButton Text={"Mensajes"} />
+          <i class="bi bi-chat-left"></i>
+        </div>
+        <div>
+          <OpcionesButton Text={"Notificaciones"} />
+          <i class="bi bi-heart"></i>
+        </div>
+    </>
   );
 };
 
