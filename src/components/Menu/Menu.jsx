@@ -3,60 +3,63 @@ import InputStyled from "./InputMenu";
 import styled from "styled-components";
 import OpcionesButton from "./OpcionesButton";
 
-const Menu = () => {
+const Menu = (props) => {
   return (
     <>
-      <Div>
-        <InputStyled NameLabel={"Buscar"} Name={"Buscador"} Type={"text"} />
-        <i class="bi bi-search"></i>
-      </Div>
+      <DivInput>
+        <InputStyled NameLabel={""} Name={"Buscador"} Type={"text"} />
+      </DivInput>
 
-      <div>
-        <OpcionesButton Text={"Inicio"}/>
-        <i class="bi bi-house"></i>
-      </div>
-        <div>
-          <OpcionesButton Text={"Explorar"} />
-          <i class="bi bi-compass"></i>
-        </div>
-        <div>
-          <OpcionesButton Text={"Reels"} />
-        </div>
-        <div>
-          <OpcionesButton Text={"Mensajes"} />
-          <i class="bi bi-chat-left"></i>
-        </div>
-        <div>
-          <OpcionesButton Text={"Notificaciones"} />
-          <i class="bi bi-heart"></i>
-        </div>
+      <DivMenu>
+        <OpcionesButton
+          Texto1={"Inicio"}
+          Icono1={"bi bi-house"}
+          Texto2={"Explorar"}
+          Icono2={"bi bi-compass"}
+          Texto3={"Notificaciones"}
+          Icono3={"bi bi-heart"}
+          Texto4={"Mensajes"}
+          Icono4={"bi bi-chat-left"}
+          Texto5={"Configuracion"}
+          Icono5={"bi bi-gear"}
+        />
+      </DivMenu>
     </>
   );
 };
 
 export default Menu;
 
-const Div = styled.div`
+const DivMenu = styled.div`
+  grid-area: 1 / 1 / 2 / 2;
   display: flex;
-  align-items: center;
-  width: 100%;
-  height: 75px;
-  position: relative;
-
+  width: 18%;
+  position: fixed;
+  height: 100vh;
+  border: 1px solid white;
+  @media (max-width: 1150px) {
+    width: 8%;
+  }
   &::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 1%;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(37, 37, 37, 1) 45%,
-      rgba(37, 37, 37, 1) 55%,
-      rgba(255, 255, 255, 1) 100%
-    );
-    bottom: 0;
-    left: 0;
-    filter: opacity(45%);
+  }
+`;
+
+const DivInput = styled.div`
+  grid-area: 1 / 2 / 2 / 5;
+  display: flex;
+  align-items: center;
+  width: 82%;
+  right: 0;
+  height: 75px;
+  position: fixed;
+  border: 1px solid white;
+  @media (max-width: 1150px) {
+    width: 92%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
   }
 `;

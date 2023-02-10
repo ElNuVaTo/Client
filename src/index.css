@@ -9,16 +9,21 @@
 }
 
 body {
+
   font-family: "Open Sans", sans-serif;
-  background-color: white;
+  background-color: #252525;
 }
 
 p,
-input,
 label,
 a,
 button,
 select,
 textarea {
+  color: white;
   font-size: 18px;
 }
+
+input{
+      color: black;
+  }

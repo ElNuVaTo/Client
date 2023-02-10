@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const InputStyled = (props) => {
-  const { Name, Type, NameLabel, OnChange, Value, OnKeyUp, onBlur, Valido, } =
+  const { Name, Type, NameLabel, OnChange, Value, } =
     props;
   return (
     <Div>
@@ -13,11 +13,9 @@ const InputStyled = (props) => {
         type={Type}
         onChange={OnChange}
         value={Value}
-        onKeyUp={OnKeyUp}
-        onBlur={onBlur}
-        Valido={Valido}
-      />
 
+      />
+      <Icon className="bi bi-search"></Icon>
     </Div>
   );
 };
@@ -26,13 +24,13 @@ export default InputStyled;
 
 const Div = styled.div`
   display: flex;
-  max-width: 260px;
-  width: 70%;
-  height: 25px;
+  max-width: 650px;
+  width: 60%;
+  height: 35px;
   margin: auto;
   position: relative;
-  background-color: black;
-  border-radius: 3px;
+  border-radius: 15px;
+  align-items: center;
 `;
 
 const Label = styled.label`
@@ -42,6 +40,7 @@ const Label = styled.label`
   padding: 0 15px;
   font-size: 15px;
   user-select: none;
+
 `;
 
 const Input = styled.input`
@@ -52,12 +51,23 @@ const Input = styled.input`
   outline: none;
   color: #252525;
   border: none;
-  padding: 0 22px 0 10px;
-  border-bottom: 1px solid #252525;
+  padding: 0 15px 0 48px;
+  border-radius: 15px;
+  border-bottom: 1px solid #8b8b8b;
   &:focus {
     border-bottom: 1px solid #4a86ffc7;
   }
 
-
+`;
+const Icon = styled.i`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 100%;
+  font-size: 16px;
+  border-radius: 15px 0 0 15px;
+  background-color: #8b8b8b18;
 `;
 
