@@ -20,7 +20,6 @@ const List = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
 `;
 const Menu = styled.i`
   display: flex;

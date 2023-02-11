@@ -61,7 +61,7 @@ const Div = styled.div`
     justify-content: center;
     width: 85%;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 550px) {
     width: 50%;
   }
 `;
@@ -80,7 +80,7 @@ const Button = styled.button`
   @media (max-width: 1150px) {
     display: none;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 550px) {
     display: flex;
   }
 
@@ -110,7 +110,7 @@ const Icono = styled.i`
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 550px) {
     font-size: 28px;
     position: absolute;
     width: auto;
