@@ -31,6 +31,9 @@ const Div = styled.div`
   position: relative;
   border-radius: 15px;
   align-items: center;
+  @media (max-width: 720px) {
+    width: 80%;
+  }
 `;
 
 const Label = styled.label`

@@ -48,7 +48,6 @@ const DivGrid = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
-
 `;
 
 const Div = styled.div`
@@ -56,10 +55,14 @@ const Div = styled.div`
   position: relative;
   margin: auto;
   width: 90%;
+  border-radius: 15px;
   height: 50px;
-  border: 1px solid red;
   @media (max-width: 1150px) {
     justify-content: center;
+    width: 85%;
+  }
+  @media (max-width: 480px) {
+    width: 50%;
   }
 `;
 
@@ -67,14 +70,22 @@ const Button = styled.button`
   width: 100%;
   height: 100%;
   text-align: left;
-  padding: 0 35px;
+  border-radius: 15px;
+  padding: 0 55px;
   background: transparent;
   border: none;
-  border: 1px solid white;
   font-size: 22px;
+  align-items: center;
   cursor: pointer;
   @media (max-width: 1150px) {
-    opacity: 0;
+    display: none;
+  }
+  @media (max-width: 480px) {
+    display: flex;
+  }
+
+  &:hover {
+    background-color: #80808028;
   }
 `;
 
@@ -84,5 +95,28 @@ const Icono = styled.i`
   color: white;
   display: flex;
   height: 100%;
+  left: 15px;
   align-items: center;
+  pointer-events: none;
+  @media (max-width: 1150px) {
+    justify-content: center;
+    position: static;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    pointer-events: auto;
+    &:hover {
+      background-color: #80808028;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+    position: absolute;
+    width: auto;
+    color: white;
+    display: flex;
+    height: 100%;
+    pointer-events: none;
+  }
 `;
