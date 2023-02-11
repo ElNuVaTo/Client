@@ -5,14 +5,12 @@ import ButtonStyled from "./ButtonStyled";
 
 const FormRegi = (props) => {
   const [Usuario, SetUsuario] = useState({ Texto: "", Validacion: null });
-  const [Apodo, SetApodo] = useState({ Texto: "", Validacion: null });
   const [Email, SetEmail] = useState({ Texto: "", Validacion: null });
   const [Contraseña, SetContraseña] = useState({ Texto: "", Validacion: null });
   const [Confirmar, SetConfirmar] = useState({ Texto: "", Validacion: null });
 
   const ExpresionesRegulares = {
     Usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-    Apodo: /^[a-zA-ZÀ-ÿ\S]{2,15}$/, // Letras y espacios, pueden llevar acentos.
     Email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     Contraseña: /^.{4,12}$/, // 4 a 12 digitos.
     Espacios: /^[^\s].*/,
@@ -30,9 +28,6 @@ const FormRegi = (props) => {
           SetEstadoUsuario={SetUsuario}
           EstadoUsuario={Usuario}
           ExpresionUser={ExpresionesRegulares.Usuario}
-          SetEstadoApodo={SetApodo}
-          EstadoApodo={Apodo}
-          ExpresionApodo={ExpresionesRegulares.Apodo}
           SetEstadoEmail={SetEmail}
           EstadoEmail={Email}
           ExpresionEmail={ExpresionesRegulares.Email}
@@ -55,7 +50,7 @@ const Form = styled.form`
   align-items: center;
   gap: 10px 0;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(11, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   max-width: 400px;
   height: 75vh;
   width: 95%;
@@ -64,18 +59,21 @@ const Form = styled.form`
   &::before {
     content: "";
     position: absolute;
-    width: 1%;
-    height: 110%;
-    border: 1px solid #252525;
-    border-color: transparent  transparent transparent #252525;
+    height: 100%;
+    right: 0;
+    top:0;
+    background: linear-gradient(100deg, #1c2039 0%, #adadad 50%, #1c2039 70%);
+    opacity: 50%;
+    padding: 0.8px;
   }
   &::after {
     content: "";
     position: absolute;
-    width: 1%;
-    height: 110%;
-    right: 0;
-    border: 1px solid #252525;
-    border-color: transparent #252525 transparent transparent;
-    }
+    height: 100%;
+    left: 0;
+    transform: rotate(180deg);
+    background: linear-gradient(100deg, #1c2039 0%, #adadad 50%, #1c2039 70%);
+    opacity: 50%;
+    padding: 0.8px;
+  }
 `;

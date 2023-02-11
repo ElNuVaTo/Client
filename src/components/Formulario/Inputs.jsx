@@ -1,30 +1,27 @@
 import React from "react";
 import InputStyled from "./InputStyled";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Inputs = (props) => {
   const {
     EstadoUsuario,
-    EstadoApodo,
+
     EstadoEmail,
     EstadoContraseña,
     EstadoConfirmar,
     SetEstadoUsuario,
-    SetEstadoApodo,
+
     SetEstadoEmail,
     SetEstadoContraseña,
     SetEstadoConfirmar,
     ExpresionUser,
-    ExpresionApodo,
+
     ExpresionEmail,
     ExpresionContraseña,
   } = props;
 
   const OnChangeUser = (e) => {
     SetEstadoUsuario({ ...EstadoUsuario, Texto: e.target.value });
-  };
-  const OnChangeApodo = (e) => {
-    SetEstadoApodo({ ...EstadoApodo, Texto: e.target.value });
   };
   const OnChangeEmail = (e) => {
     SetEstadoEmail({ ...EstadoEmail, Texto: e.target.value });
@@ -42,16 +39,6 @@ const Inputs = (props) => {
         SetEstadoUsuario({ ...EstadoUsuario, Validacion: true });
       } else {
         SetEstadoUsuario({ ...EstadoUsuario, Validacion: false });
-      }
-    }
-  };
-
-  const ValidacionApodo = (e) => {
-    if (ExpresionApodo) {
-      if (ExpresionApodo.test(EstadoApodo.Texto)) {
-        SetEstadoApodo({ ...EstadoApodo, Validacion: true });
-      } else {
-        SetEstadoApodo({ ...EstadoApodo, Validacion: false });
       }
     }
   };
@@ -81,10 +68,10 @@ const Inputs = (props) => {
   const isEmpty = (input) => {
     return input === "" ? false : true;
   };
-  
+
   const ValidacionConfirmar = (e) => {
     const empty = isEmpty(EstadoConfirmar.Texto);
-  
+
     if (EstadoContraseña.Texto === EstadoConfirmar.Texto) {
       SetEstadoConfirmar({ ...EstadoConfirmar, Validacion: empty });
     } else {
@@ -104,6 +91,7 @@ const Inputs = (props) => {
           OnKeyUp={ValidacionUser}
           onBlur={ValidacionUser}
           Valido={EstadoUsuario.Validacion}
+          Icono={'bi bi-person'}
         />
       </PosiUser>
 
@@ -111,27 +99,6 @@ const Inputs = (props) => {
         <DivUser>
           <Text>El nombre de usuario debe tener entre 4 y 16 caracteres.</Text>
         </DivUser>
-      )}
-
-      <PosiApodo>
-        <InputStyled
-          NameLabel={"Apodo"}
-          Name={"Apodo"}
-          Type={"text"}
-          OnChange={OnChangeApodo}
-          Value={EstadoApodo.Texto}
-          OnKeyUp={ValidacionApodo}
-          onBlur={ValidacionApodo}
-          Valido={EstadoApodo.Validacion}
-        />
-      </PosiApodo>
-
-      {EstadoApodo.Validacion !== null && EstadoApodo.Validacion < true && (
-        <DivApodo>
-          <Text>
-            Apodo entre 2 y 15 caracteres con letras, espacios y acentos
-          </Text>
-        </DivApodo>
       )}
 
       <PosiEmail>
@@ -144,6 +111,7 @@ const Inputs = (props) => {
           Value={EstadoEmail.Texto}
           OnKeyUp={ValidacionEmail}
           onBlur={ValidacionEmail}
+          Icono={'bi bi-envelope'}
         />
       </PosiEmail>
 
@@ -166,6 +134,7 @@ const Inputs = (props) => {
           Valido={EstadoContraseña.Validacion}
           OnKeyUp={ValidacionContraseña}
           onBlur={ValidacionContraseña}
+          Icono={'bi bi-shield-lock'}
         />
       </PosiContraseña>
 
@@ -186,6 +155,7 @@ const Inputs = (props) => {
           Valido={EstadoConfirmar.Validacion}
           OnKeyUp={ValidacionConfirmar}
           onBlur={ValidacionConfirmar}
+          Icono={'bi bi-shield-lock'}
         />
       </PosiConfirm>
 
@@ -207,25 +177,22 @@ const PosiUser = styled.div`
   grid-area: 1 / 1 / 2 / 2;
 `;
 
-const PosiApodo = styled.div`
+const PosiEmail = styled.div`
   grid-area: 3 / 1 / 4 / 2;
 `;
 
-const PosiEmail = styled.div`
-  grid-area: 5 / 1 / 6 / 2;
-`;
-
 const PosiContraseña = styled.div`
-  grid-area: 7 / 1 / 8 / 2;
+  grid-area: 5 / 1 / 6 / 2; 
 `;
 
 const PosiConfirm = styled.div`
-  grid-area: 9 / 1 / 10 / 2;
+  grid-area: 7 / 1 / 8 / 2; 
 `;
 
 const DivUser = styled.div`
   position: absolute;
-  left: 62px;
+  left: 65px;
+  top: -5px;
   display: flex;
   width: 70%;
   margin: auto;
@@ -233,19 +200,21 @@ const DivUser = styled.div`
   grid-area: 2 / 1 / 3 / 2;
 `;
 
-const DivApodo = styled.div`
+const DivEmail = styled.div`
   position: absolute;
-  left: 62px;
+  left: 65px;
+  top: -5px;
   display: flex;
   width: 70%;
   margin: auto;
   z-index: 1;
-  grid-area: 4 / 1 / 5 / 2;
+  grid-area: 4 / 1 / 5 / 2; 
 `;
 
-const DivEmail = styled.div`
+const DivContra = styled.div`
   position: absolute;
-  left: 62px;
+  left: 65px;
+  top: -5px;
   display: flex;
   width: 70%;
   margin: auto;
@@ -253,9 +222,10 @@ const DivEmail = styled.div`
   grid-area: 6 / 1 / 7 / 2;
 `;
 
-const DivContra = styled.div`
+const DivConfirm = styled.div`
   position: absolute;
-  left: 62px;
+  left: 65px;
+  top: -5px;
   display: flex;
   width: 70%;
   margin: auto;
@@ -263,18 +233,8 @@ const DivContra = styled.div`
   grid-area: 8 / 1 / 9 / 2;
 `;
 
-const DivConfirm = styled.div`
-  position: absolute;
-  left: 62px;
-  display: flex;
-  width: 70%;
-  margin: auto;
-  z-index: 1;
-  grid-area: 10 / 1 / 11 / 2;
-`;
-
 const Text = styled.p`
   align-items: left;
   font-size: 14px;
-  color: #ed4245;
+  color: #f2384b;
 `;

@@ -5,7 +5,7 @@ import Menu from "./components/Menu/Menu";
 const App = () => {
   return (
     <>
-      <Menu/>
+      <FormRegi/>
     </>
   );
 };

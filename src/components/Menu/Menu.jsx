@@ -47,22 +47,24 @@ const DivLista = styled.div`
     position: absolute;
     height: 100%;
     right: 0;
-    background: linear-gradient(100deg, #252525 0%, #adadad 50%, #252525 70%);
+    background: linear-gradient(100deg, #1c2039 10%, #adadad 50%, #1c2039 80%);
     opacity: 50%;
-    background-repeat: repeat;
-    padding: 1px;
+    padding: 0.8px;
   }
   &::after {
     content: "";
     position: absolute;
     width: 100%;
     bottom: 0;
-    background: linear-gradient(100deg, #252525 0%, #adadad 50%, #252525 70%);
+    background: linear-gradient(100deg, #1c2039 10%, #adadad 50%, #1c2039 80%);
     opacity: 50%;
-    background-repeat: repeat;
-    padding: 1px;
+    padding: 0.8px;
   }
 `;
+
+
+
+
 
 const DivMenu = styled.div`
   grid-area: 1 / 1 / 2 / 2;
@@ -85,10 +87,9 @@ const DivMenu = styled.div`
     position: absolute;
     height: 100%;
     right: 0;
-    background: linear-gradient(100deg, #252525 0%, #adadad 50%, #252525 95%);
+    background: linear-gradient(100deg, #1c2039 10%, #adadad 55%, #1c2039 90%);
     opacity: 50%;
-    background-repeat: repeat;
-    padding: 1px;
+    padding: 0.8px;
   }
 `;
 
@@ -112,9 +113,8 @@ const DivInput = styled.div`
     position: absolute;
     width: 100%;
     bottom: 0;
-    background: linear-gradient(100deg, #252525 0%, #adadad 50%, #252525 100%);
+    background: linear-gradient(100deg, #1c2039 10%, #adadad 40%, #1c2039 100%);
     opacity: 50%;
-    background-repeat: repeat;
-    padding: 1px;
+    padding: 0.8px;
   }
 `;

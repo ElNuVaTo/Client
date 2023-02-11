@@ -2,11 +2,13 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const InputStyled = (props) => {
-  const { Name, Type, NameLabel, OnChange, Value, OnKeyUp, onBlur, Valido, Mach} =
-    props;
+  const { Name, Type, Icono, OnChange, Value, OnKeyUp, onBlur, Valido } = props;
+
   return (
     <Div>
-      <Label htmlFor={Name}>{NameLabel}</Label>
+      <Label htmlFor={Name}>
+        <Icons className={Icono}></Icons>
+      </Label>
       <Input
         id={Name}
         type={Type}
@@ -17,11 +19,7 @@ const InputStyled = (props) => {
         onKeyUp={OnKeyUp}
         onBlur={onBlur}
         Valido={Valido}
-        Mach={Mach}
       />
-
-      <C Valido={Valido} className="bi bi-check-circle-fill"></C>
-      <X Valido={Valido} className="bi bi-x-circle-fill"></X>
     </Div>
   );
 };
@@ -32,19 +30,22 @@ const Div = styled.div`
   display: flex;
   max-width: 260px;
   width: 70%;
-  height: 30px;
+  height: 35px;
   margin: auto;
   position: relative;
-  background-color: black;
   border-radius: 3px;
 `;
-
+const Icons = styled.i`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-size: 22px;
+  align-items: center;
+`;
 const Label = styled.label`
+  height: 100%;
   position: absolute;
-  top: -20px;
-  left: 15px;
-  padding: 0 15px;
-  background-color: white;
+  right: 8px;
   user-select: none;
 `;
 
@@ -52,62 +53,25 @@ const Input = styled.input`
   width: 100%;
   height: 100%;
   border-radius: 3px;
+  outline: none;
   border: none;
-  padding: 0 22px 0 10px;
-  outline: 2px solid #252525c7;
+  padding: 0 35px 0 10px;
+  background-color: #252c47;
   &:focus {
-    outline: 2px solid #4a86ffc7;
+    border: 2px solid #4a86ffc7;
   }
 
   ${(props) =>
     props.Valido === true &&
     css`
-      outline: 2px solid #3ba55c !important;
+      background: #0edb4323;
+      border: 2px solid #0edb75 !important;
     `}
 
   ${(props) =>
     props.Valido === false &&
     css`
-      outline: 2px solid #ed4245 !important;
-    `}
-`;
-
-const X = styled.i`
-  position: absolute;
-  right: 5px;
-  bottom: 7px;
-  color: #ed4245;
-  opacity: 0;
-
-  ${(props) =>
-    props.Valido === false &&
-    css`
-      opacity: 1;
-    `}
-
-  ${(props) =>
-    props.Valido === true &&
-    css`
-      opacity: 0;
-    `}
-`;
-
-const C = styled.i`
-  position: absolute;
-  right: 5px;
-  bottom: 7px;
-  color: #3ba55c;
-  opacity: 0;
-
-  ${(props) =>
-    props.Valido === false &&
-    css`
-      opacity: 0;
-    `}
-
-  ${(props) =>
-    props.Valido === true &&
-    css`
-      opacity: 1;
+      background: #f53d4323;
+      border: 2px solid #f2384b !important;
     `}
 `;

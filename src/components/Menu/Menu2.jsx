@@ -59,28 +59,27 @@ const Label = styled.label`
 const Input = styled.input`
   width: 100%;
   height: 100%;
-  background-color: #e5e5e5;
-  font-size: 18px;
+  background-color: #262b49;
   outline: none;
-  color: #252525;
   border: none;
   padding: 0 15px 0 48px;
   border-radius: 15px;
-  border-bottom: 1px solid #8b8b8b;
+  border: 2px solid #262b49;
   &:focus {
-    border-bottom: 1px solid #4a86ffc7;
+    border: 2px solid #4a86ffc7;
   }
 `;
 const Icon = styled.i`
   position: absolute;
   display: flex;
   align-items: center;
+  color: white;
   justify-content: center;
   width: 45px;
   height: 100%;
   font-size: 16px;
   border-radius: 15px 0 0 15px;
-  background-color: #8b8b8b18;
+  background-color: #7182da16;
 `;
 
 const Button = styled.button`
