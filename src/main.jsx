@@ -7,6 +7,6 @@ import GitHub from './components/GitHub/GitHub'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <GitHub/>
-    <App />
+    <App/>
   </React.StrictMode>,
 )

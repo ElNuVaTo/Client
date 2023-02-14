@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Inputs from "./Inputs";
 import styled from "styled-components";
 import ButtonStyled from "./ButtonStyled";
+import MensajeError from "./MensajeError";
 
 const FormRegi = (props) => {
   const [Usuario, SetUsuario] = useState({ Texto: "", Validacion: null });
@@ -25,19 +26,26 @@ const FormRegi = (props) => {
     <>
       <Form onSubmit={OnSubmit}>
         <Inputs
-          SetEstadoUsuario={SetUsuario}
-          EstadoUsuario={Usuario}
+          SetUsuario={SetUsuario}
+          Usuario={Usuario}
           ExpresionUser={ExpresionesRegulares.Usuario}
-          SetEstadoEmail={SetEmail}
-          EstadoEmail={Email}
+          SetEmail={SetEmail}
+          Email={Email}
           ExpresionEmail={ExpresionesRegulares.Email}
-          SetEstadoContraseña={SetContraseña}
-          EstadoContraseña={Contraseña}
+          SetContraseña={SetContraseña}
+          Contraseña={Contraseña}
           ExpresionContraseña={ExpresionesRegulares.Contraseña}
-          SetEstadoConfirmar={SetConfirmar}
-          EstadoConfirmar={Confirmar}
+          SetConfirmar={SetConfirmar}
+          Confirmar={Confirmar}
         />
         <ButtonStyled Text="Registrarse" />
+
+        <MensajeError
+        Usuario={Usuario}
+        Email={Email}
+        Contraseña={Contraseña}
+        Confirmar={Confirmar}
+        />
       </Form>
     </>
   );
@@ -48,13 +56,12 @@ export default FormRegi;
 const Form = styled.form`
   display: grid;
   align-items: center;
-  gap: 10px 0;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(9, 1fr);
   max-width: 400px;
-  height: 75vh;
-  width: 95%;
-  margin: 70px auto;
+  height: 82vh;
+  width: 100%;
+  margin: 60px auto;
   position: relative;
   &::before {
     content: "";

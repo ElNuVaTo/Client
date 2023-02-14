@@ -3,6 +3,8 @@ import InputStyled from "./Menu2";
 import styled from "styled-components";
 import OpcionesButton from "./OpcionesButton";
 import Lista from "./Lista";
+import Historia from "../Historias/Historia";
+
 
 const Menu = (props) => {
   return (
@@ -28,6 +30,7 @@ const Menu = (props) => {
           Icono5={"bi bi-gear"}
         />
       </DivMenu>
+      <Historia/>
     </>
   );
 };

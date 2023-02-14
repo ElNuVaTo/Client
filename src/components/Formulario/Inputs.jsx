@@ -1,240 +1,225 @@
 import React from "react";
-import InputStyled from "./InputStyled";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Inputs = (props) => {
   const {
-    EstadoUsuario,
-
-    EstadoEmail,
-    EstadoContraseña,
-    EstadoConfirmar,
-    SetEstadoUsuario,
-
-    SetEstadoEmail,
-    SetEstadoContraseña,
-    SetEstadoConfirmar,
+    Usuario,
+    Email,
+    Contraseña,
+    Confirmar,
+    SetUsuario,
+    SetEmail,
+    SetContraseña,
+    SetConfirmar,
     ExpresionUser,
-
     ExpresionEmail,
     ExpresionContraseña,
   } = props;
 
-  const OnChangeUser = (e) => {
-    SetEstadoUsuario({ ...EstadoUsuario, Texto: e.target.value });
+  //Capturar tecla y pasarlo al value
+  const OnUsuario = (e) => {
+    SetUsuario({ ...Usuario, Texto: e.target.value });
   };
-  const OnChangeEmail = (e) => {
-    SetEstadoEmail({ ...EstadoEmail, Texto: e.target.value });
+  const OnEmail = (e) => {
+    SetEmail({ ...Email, Texto: e.target.value });
   };
-  const OnChangePass = (e) => {
-    SetEstadoContraseña({ ...EstadoContraseña, Texto: e.target.value });
+  const OnContraseña = (e) => {
+    SetContraseña({ ...Contraseña, Texto: e.target.value });
   };
-  const OnChangeConfirm = (e) => {
-    SetEstadoConfirmar({ ...EstadoConfirmar, Texto: e.target.value });
+  const OnConfirmar = (e) => {
+    SetConfirmar({ ...Confirmar, Texto: e.target.value });
   };
 
-  const ValidacionUser = (e) => {
+  const ValidoUsuario = (e) => {
     if (ExpresionUser) {
-      if (ExpresionUser.test(EstadoUsuario.Texto)) {
-        SetEstadoUsuario({ ...EstadoUsuario, Validacion: true });
+      if (ExpresionUser.test(Usuario.Texto)) {
+        SetUsuario({ ...Usuario, Validacion: true });
       } else {
-        SetEstadoUsuario({ ...EstadoUsuario, Validacion: false });
+        SetUsuario({ ...Usuario, Validacion: false });
       }
     }
   };
 
-  const ValidacionEmail = (e) => {
+  const ValidoEmail = (e) => {
     if (ExpresionEmail) {
-      if (ExpresionEmail.test(EstadoEmail.Texto)) {
-        SetEstadoEmail({ ...EstadoEmail, Validacion: true });
+      if (ExpresionEmail.test(Email.Texto)) {
+        SetEmail({ ...Email, Validacion: true });
       } else {
-        SetEstadoEmail({ ...EstadoEmail, Validacion: false });
+        SetEmail({ ...Email, Validacion: false });
       }
     }
   };
 
-  const ValidacionContraseña = (e) => {
+  const ValidoContraseña = (e) => {
     if (ExpresionContraseña) {
-      if (ExpresionContraseña.test(EstadoContraseña.Texto)) {
-        SetEstadoContraseña({ ...EstadoContraseña, Validacion: true });
-        ValidacionConfirmar();
+      if (ExpresionContraseña.test(Contraseña.Texto)) {
+        SetContraseña({ ...Contraseña, Validacion: true });
+        ValidoConfirmar();
       } else {
-        SetEstadoContraseña({ ...EstadoContraseña, Validacion: false });
-        ValidacionConfirmar();
+        SetContraseña({ ...Contraseña, Validacion: false });
+        ValidoConfirmar();
       }
     }
   };
 
-  const isEmpty = (input) => {
-    return input === "" ? false : true;
-  };
+  // Contraseña Igual
 
-  const ValidacionConfirmar = (e) => {
-    const empty = isEmpty(EstadoConfirmar.Texto);
-
-    if (EstadoContraseña.Texto === EstadoConfirmar.Texto) {
-      SetEstadoConfirmar({ ...EstadoConfirmar, Validacion: empty });
+  const ValidoConfirmar = (e) => {
+    if (
+      Contraseña.Texto === Confirmar.Texto &&
+      ExpresionContraseña.test(Confirmar.Texto)
+    ) {
+      SetConfirmar({ ...Confirmar, Validacion: true });
     } else {
-      SetEstadoConfirmar({ ...EstadoConfirmar, Validacion: false });
+      SetConfirmar({ ...Confirmar, Validacion: false });
     }
   };
 
   return (
     <>
-      <PosiUser>
-        <InputStyled
-          NameLabel={"Usuario"}
-          Name={"Usuario"}
-          Type={"text"}
-          OnChange={OnChangeUser}
-          Value={EstadoUsuario.Texto}
-          OnKeyUp={ValidacionUser}
-          onBlur={ValidacionUser}
-          Valido={EstadoUsuario.Validacion}
-          Icono={'bi bi-person'}
-        />
-      </PosiUser>
+      <PosicionUsuario>
+        <Div>
+          <Label htmlFor="Usuario">
+            <Icons className="bi bi-person"></Icons>
+          </Label>
+          <Input
+            id="Usuario"
+            name="Usuario"
+            type="text"
+            onChange={OnUsuario}
+            onKeyUp={ValidoUsuario}
+            value={Usuario.Texto}
+            StyledValidacion={Usuario.Validacion}
+            required
+          />
+        </Div>
+      </PosicionUsuario>
 
-      {EstadoUsuario.Validacion !== null && EstadoUsuario.Validacion < true && (
-        <DivUser>
-          <Text>El nombre de usuario debe tener entre 4 y 16 caracteres.</Text>
-        </DivUser>
-      )}
+      <PosicionEmail>
+        <Div>
+          <Label htmlFor="Email">
+            <Icons className="bi bi-envelope"></Icons>
+          </Label>
+          <Input
+            id="Email"
+            name="Email"
+            type="text"
+            onChange={OnEmail}
+            onKeyUp={ValidoEmail}
+            value={Email.Texto}
+            StyledValidacion={Email.Validacion}
+            required
+          />
+        </Div>
+      </PosicionEmail>
 
-      <PosiEmail>
-        <InputStyled
-          NameLabel={"Correo"}
-          Name={"Email"}
-          Type={"email"}
-          OnChange={OnChangeEmail}
-          Valido={EstadoEmail.Validacion}
-          Value={EstadoEmail.Texto}
-          OnKeyUp={ValidacionEmail}
-          onBlur={ValidacionEmail}
-          Icono={'bi bi-envelope'}
-        />
-      </PosiEmail>
+      <PosicionConstraseña>
+        <Div>
+          <Label htmlFor="Contraseña">
+            <Icons className="bi bi-shield-lock"></Icons>
+          </Label>
+          <Input
+            id="Contraseña"
+            name="Contraseña"
+            type="text"
+            onChange={OnContraseña}
+            onKeyUp={ValidoContraseña}
+            value={Contraseña.Texto}
+            StyledValidacion={Contraseña.Validacion}
+            required
+          />
+        </Div>
+      </PosicionConstraseña>
 
-      {EstadoEmail.Validacion !== null && EstadoEmail.Validacion < true && (
-        <DivEmail>
-          <Text>
-            Ingrese un correo electrónico válido con el formato
-            nombre@dominio.com
-          </Text>
-        </DivEmail>
-      )}
-
-      <PosiContraseña>
-        <InputStyled
-          NameLabel={"Contraseña"}
-          Name={"Password"}
-          Type={"password"}
-          OnChange={OnChangePass}
-          Value={EstadoContraseña.Texto}
-          Valido={EstadoContraseña.Validacion}
-          OnKeyUp={ValidacionContraseña}
-          onBlur={ValidacionContraseña}
-          Icono={'bi bi-shield-lock'}
-        />
-      </PosiContraseña>
-
-      {EstadoContraseña.Validacion !== null &&
-        EstadoContraseña.Validacion < true && (
-          <DivContra>
-            <Text>La contraseña debe tener entre 4 y 12 dígitos</Text>
-          </DivContra>
-        )}
-
-      <PosiConfirm>
-        <InputStyled
-          NameLabel={"Repetir"}
-          Name={"ConfirmPassword"}
-          Type={"password"}
-          OnChange={OnChangeConfirm}
-          Value={EstadoConfirmar.Texto}
-          Valido={EstadoConfirmar.Validacion}
-          OnKeyUp={ValidacionConfirmar}
-          onBlur={ValidacionConfirmar}
-          Icono={'bi bi-shield-lock'}
-        />
-      </PosiConfirm>
-
-      {EstadoConfirmar.Validacion !== null &&
-        EstadoConfirmar.Validacion < true && (
-          <DivConfirm>
-            <Text>
-              Las contraseñas no coinciden. Por favor, vuelve a intentarlo
-            </Text>
-          </DivConfirm>
-        )}
+      <PosicionConfirmar>
+        <Div>
+          <Label htmlFor="ConfirmarContraseña">
+            <Icons className="bi bi-shield-lock"></Icons>
+          </Label>
+          <Input
+            id="ConfirmarContraseña"
+            name="ConfirmarContraseña"
+            type="text"
+            onChange={OnConfirmar}
+            onKeyUp={ValidoConfirmar}
+            value={Confirmar.Texto}
+            StyledValidacion={Confirmar.Validacion}
+            required
+          />
+        </Div>
+      </PosicionConfirmar>
     </>
   );
 };
 
 export default Inputs;
 
-const PosiUser = styled.div`
+// Posicionar inputs
+
+const PosicionUsuario = styled.div`
   grid-area: 1 / 1 / 2 / 2;
 `;
 
-const PosiEmail = styled.div`
+const PosicionEmail = styled.div`
   grid-area: 3 / 1 / 4 / 2;
 `;
 
-const PosiContraseña = styled.div`
-  grid-area: 5 / 1 / 6 / 2; 
+const PosicionConstraseña = styled.div`
+  grid-area: 5 / 1 / 6 / 2;
 `;
 
-const PosiConfirm = styled.div`
-  grid-area: 7 / 1 / 8 / 2; 
+const PosicionConfirmar = styled.div`
+  grid-area: 7 / 1 / 8 / 2;
 `;
 
-const DivUser = styled.div`
-  position: absolute;
-  left: 65px;
-  top: -5px;
+// Styled a los inputs + Iconos
+
+const Div = styled.div`
   display: flex;
+  max-width: 260px;
   width: 70%;
+  height: 35px;
   margin: auto;
-  z-index: 1;
-  grid-area: 2 / 1 / 3 / 2;
+  position: relative;
+  border-radius: 3px;
 `;
-
-const DivEmail = styled.div`
-  position: absolute;
-  left: 65px;
-  top: -5px;
+const Icons = styled.i`
   display: flex;
-  width: 70%;
-  margin: auto;
-  z-index: 1;
-  grid-area: 4 / 1 / 5 / 2; 
+  height: 100%;
+  width: 100%;
+  font-size: 22px;
+  align-items: center;
 `;
-
-const DivContra = styled.div`
+const Label = styled.label`
+  height: 100%;
   position: absolute;
-  left: 65px;
-  top: -5px;
-  display: flex;
-  width: 70%;
-  margin: auto;
-  z-index: 1;
-  grid-area: 6 / 1 / 7 / 2;
+  right: 8px;
+  user-select: none;
 `;
 
-const DivConfirm = styled.div`
-  position: absolute;
-  left: 65px;
-  top: -5px;
-  display: flex;
-  width: 70%;
-  margin: auto;
-  z-index: 1;
-  grid-area: 8 / 1 / 9 / 2;
-`;
+const Input = styled.input`
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  padding: 0 35px 0 10px;
+  background-color: #252c47;
+  &:focus {
+    border: 2px solid #4a86ffc7;
+  }
 
-const Text = styled.p`
-  align-items: left;
-  font-size: 14px;
-  color: #f2384b;
+  ${(props) =>
+    props.StyledValidacion === true &&
+    css`
+      background: #0edb4323;
+      border: 2px solid #0edb75 !important;
+    `}
+
+  ${(props) =>
+    props.StyledValidacion === false &&
+    css`
+      background: #f53d4323;
+      border: 2px solid #f2384b !important;
+    `}
 `;
