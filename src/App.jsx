@@ -3,6 +3,7 @@ import { useState} from "react";
 import FormRegi from "./components/Formulario/FormRegi";
 import Menu from "./components/Menu/Menu";
 import Carga from "./components/Carga/Carga";
+import Api from "./components/Publicaciones/Api";
 
 const App = (props) => {
   const [Load, SetLoad] = useState(false)
@@ -16,7 +17,7 @@ const App = (props) => {
 
   return (
     <>
-      {Load ? <Carga /> : <FormRegi/>}
+      {Load ? <Carga /> : <Api/>}
     </>
   );
 };
