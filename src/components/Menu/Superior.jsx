@@ -1,4 +1,5 @@
 import React from "react";
+import { mediaQueries } from "../../MediaQuery";
 import styled from "styled-components";
 
 const Superior = (props) => {
@@ -6,7 +7,9 @@ const Superior = (props) => {
   return (
     <Main>
       <Div>
-        <Label htmlFor={Name}><Icon className="bi bi-search"></Icon></Label>
+        <Label htmlFor={Name}>
+          <Icon className="bi bi-search"></Icon>
+        </Label>
         <Input
           id={Name}
           name={Name}
@@ -29,7 +32,6 @@ const FondoOscuro = "#1c2039";
 const FondoClaro = "#252c47";
 const Focus = "#4a86ffc7";
 
-
 // Contenido Padre
 
 const Main = styled.div`
@@ -38,19 +40,29 @@ const Main = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-around;
+  ${mediaQueries.Table} {
+  }
+  ${mediaQueries.Desktop} {
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+  }
 `;
 
-
 // Contenedor del input
-
 
 const Div = styled.div`
   display: flex;
   width: 72%;
-  max-width: 600px;
+  max-width: 650px;
   height: 35px;
   position: relative;
   border-radius: 15px;
+  ${mediaQueries.Table} {
+    height: 40px;
+  }
+  ${mediaQueries.Desktop} {
+  }
 `;
 
 const Label = styled.label`
@@ -84,7 +96,6 @@ const Icon = styled.i`
   border-radius: 15px 0 0 15px;
   background-color: #7182da16;
 `;
-
 
 // Notificaciones
 

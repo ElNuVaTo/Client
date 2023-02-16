@@ -11,7 +11,7 @@ const App = (props) => {
     SetLoad(true)
     setTimeout(() => {
       SetLoad(false)
-    }, 3000)
+    }, 1)
   }, [])
 
   return (

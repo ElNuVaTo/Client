@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mediaQueries } from "../../MediaQuery";
 
 const Character = ({ character }) => {
   return (
@@ -27,11 +28,10 @@ const FondoClaro = "#252c47";
 
 //  Contenido padre
 const Main = styled.div`
-  display: flex;
+  display: grid;
   width: 100%;
   height: 100%;
-  flex-direction: column;
-  margin: 45px 0;
+  margin: 0 auto 45px 0 ;
   position: relative;
   &::after {
     content: "";
@@ -43,17 +43,28 @@ const Main = styled.div`
     opacity: 50%;
     padding: 0.8px;
   }
-  
+  ${mediaQueries.Table} {
+     
+  }
+  ${mediaQueries.Desktop} {
+  }
 `;
 // Publicaciones
 
 const Contenido = styled.div`
   display: flex;
   margin: auto;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
-
+  ${mediaQueries.Table} {
+    width: 480px;
+    height: 480px;
+  }
+  ${mediaQueries.Desktop} {
+    width: 485px;
+    height: 485px;
+  }
 `;
 
 const Imagenes = styled.img`

@@ -2,7 +2,7 @@ import React from 'react'
 
 const HistoriaIcon = () => {
   return (
-    <div>HistoriaIcon</div>
+    <div>EN CONTRUCCION LAS ISTORIAS GRASIAS</div>
   )
 }
 

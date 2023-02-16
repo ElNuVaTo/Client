@@ -1,6 +1,7 @@
 import React from 'react'
 import HistoriaIcon from './HistoriaIcon'
 import styled from "styled-components";
+import { mediaQueries } from "../../MediaQuery";
 
 const Historia = () => {
   return (
@@ -19,5 +20,13 @@ const Main = styled.div`
   width: 100%;
   height: 75px;
   top: 12vh;
-  border: 1px solid white;
+  ${mediaQueries.Table} {
+
+
+  }
+  ${mediaQueries.Desktop} {
+    left: 20%;
+    width: 55%;
+  
+  }
   `

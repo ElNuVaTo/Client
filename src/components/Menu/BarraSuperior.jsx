@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Superior from "./Superior";
+import { mediaQueries } from "../../MediaQuery";
 
 function BarraSuperior() {
   return (
@@ -33,5 +34,14 @@ const Main = styled.div`
     background: linear-gradient(100deg, ${FondoOscuro} 0%, ${Blanco} 50%, ${FondoOscuro} 100%);
     opacity: 50%;
     padding: 0.8px;
+  }
+  ${mediaQueries.Table}  {
+    width: 85%;
+    height: 25%;
+    max-height: 120px;
+  }
+  ${mediaQueries.Desktop} {
+    left: 20%;
+    width: 55%;
   }
 `;

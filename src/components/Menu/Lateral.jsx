@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { mediaQueries } from "../../MediaQuery";
 
-const Lateral = ({ Texto, ClassIcon}) => {
+const Lateral = ({ Texto, ClassIcon }) => {
   return (
     <>
       <Main>
         <Button>
           <Icono className={ClassIcon}></Icono>
-          {Texto}
+          <Text>{Texto}</Text>
         </Button>
       </Main>
     </>
@@ -24,13 +25,22 @@ const Main = styled.div`
   justify-content: center;
   position: relative;
   margin: auto;
-  width: 60%;
+  width: 65%;
   border-radius: 15px;
   height: 50px;
+  ${mediaQueries.Table} {
+    width: 75%;
+  }
+  ${mediaQueries.Desktop} {
+    width: 85%;
+  }
 `;
 
 const Button = styled.button`
   display: flex;
+  justify-content: center;
+  gap: 0 20px;
+  margin: auto;
   background: transparent;
   border: none;
   align-items: center;
@@ -38,20 +48,48 @@ const Button = styled.button`
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  padding: 0 55px;
-  font-size: 24px;
-  &:hover, :active {
+  &:hover,
+  :active {
     background-color: ${FondoClaro};
+  }
+  ${mediaQueries.Table} {
+  }
+  ${mediaQueries.Desktop} {
+    justify-content: left;
+    padding: 0 20px;
   }
 `;
 
 const Icono = styled.i`
-  position: absolute;
-  color: white;
   display: flex;
+  color: white;
   align-items: center;
   pointer-events: none;
   font-size: 30px;
   height: 100%;
   left: 15px;
+  ${mediaQueries.Table} {
+    width: 100%;
+    left: 0;
+    justify-content: center;
+  }
+  ${mediaQueries.Desktop} {
+    justify-content: center;
+    width: 25%;
+  }
+`;
+
+const Text = styled.p`
+  display: flex;
+  align-items: center;
+  text-align: left;
+  height: 100%;
+  width: 35%;
+
+  ${mediaQueries.Table} {
+    display: none;
+  }
+  ${mediaQueries.Desktop} {
+    font-size: 20px;
+  }
 `;
