@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Menu2 = (props) => {
-  const { Name, Type, NameLabel, OnChange, Value } = props;
+const Superior = (props) => {
+  const { Name, Type, OnChange, Value } = props;
   return (
     <Main>
       <Div>
-        <Label htmlFor={Name}>{NameLabel}</Label>
+        <Label htmlFor={Name}><Icon className="bi bi-search"></Icon></Label>
         <Input
           id={Name}
           name={Name}
@@ -14,7 +14,6 @@ const Menu2 = (props) => {
           onChange={OnChange}
           value={Value}
         />
-        <Icon className="bi bi-search"></Icon>
       </Div>
       <Button>
         <Icono className="bi bi-heart"></Icono>
@@ -23,24 +22,31 @@ const Menu2 = (props) => {
   );
 };
 
-export default Menu2;
+export default Superior;
+
+// Colores
+const FondoOscuro = "#1c2039";
+const FondoClaro = "#252c47";
+const Focus = "#4a86ffc7";
+
+
+// Contenido Padre
 
 const Main = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
-  justify-content: space-between;
-  margin: 0 50px;
-  @media (max-width: 550px) {
-    justify-content: space-around;
-    margin: auto 20px;
-    gap: 20px;
-  }
+  justify-content: space-around;
 `;
+
+
+// Contenedor del input
+
+
 const Div = styled.div`
   display: flex;
-  width: 65%;
+  width: 72%;
   max-width: 600px;
   height: 35px;
   position: relative;
@@ -49,24 +55,21 @@ const Div = styled.div`
 
 const Label = styled.label`
   position: absolute;
-  top: -19px;
-  left: 5px;
-  padding: 0 15px;
-  font-size: 15px;
-  user-select: none;
+  display: flex;
+  height: 100%;
 `;
 
 const Input = styled.input`
   width: 100%;
   height: 100%;
-  background-color: #262b49;
   outline: none;
   border: none;
   padding: 0 15px 0 48px;
   border-radius: 15px;
-  border: 2px solid #262b49;
+  background-color: ${FondoClaro};
+  border: 2px solid ${FondoClaro};
   &:focus {
-    border: 2px solid #4a86ffc7;
+    border: 2px solid ${Focus};
   }
 `;
 const Icon = styled.i`
@@ -81,6 +84,9 @@ const Icon = styled.i`
   border-radius: 15px 0 0 15px;
   background-color: #7182da16;
 `;
+
+
+// Notificaciones
 
 const Button = styled.button`
   border: none;

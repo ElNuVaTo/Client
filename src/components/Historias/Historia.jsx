@@ -4,24 +4,20 @@ import styled from "styled-components";
 
 const Historia = () => {
   return (
-    <Div>
+    <Main>
       <HistoriaIcon/>
-    </Div>
+    </Main>
   )
 }
 
 export default Historia
 
-const Div = styled.div`
+const Main = styled.div`
   display: flex;
-  width: 55%;
-  position: absolute;
-  height: 15vh;
-  top: 12vh;
-  left: 16%;
+  position: relative;
   cursor: pointer;
+  width: 100%;
+  height: 75px;
+  top: 12vh;
   border: 1px solid white;
-  @media (max-width: 1150px) {
-    left: 12%;
-  }
   `

@@ -3,17 +3,18 @@ import styled from "styled-components";
 
 const GitHub = () => {
   return (
-    <>
-      <div>
-        <A href="https://github.com/ElNuVaTo" target="_blank">
-          <Git className="bi bi-github"></Git>
-        </A>
-      </div>
-    </>
+    <Main>
+      <A href="https://github.com/ElNuVaTo" target="_blank">
+        <Git className="bi bi-github"></Git>
+      </A>
+    </Main>
   );
 };
 
 export default GitHub;
+
+const Main = styled.div`
+`;
 
 const Git = styled.i`
   width: 70px;
@@ -34,11 +35,13 @@ const A = styled.a`
   text-decoration: none;
   transform: rotate(-45deg);
   border-radius: 50%;
-  left: -30px;
-  top: -30px;
+  left: -50px;
+  top: -45px;
   transition: linear 0.65s;
   filter: opacity(50%);
-  &:hover {
+  z-index: 3;
+  &:hover,
+  :active {
     left: 0px;
     top: 0px;
     transform: rotate(-360deg);

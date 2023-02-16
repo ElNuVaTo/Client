@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ButtonStyled from "./ButtonStyled";
 import MensajeError from "./MensajeError";
 
-const FormRegi = (props) => {
+const Formulario = (props) => {
   const [Usuario, SetUsuario] = useState({ Texto: "", Validacion: null });
   const [Email, SetEmail] = useState({ Texto: "", Validacion: null });
   const [Contraseña, SetContraseña] = useState({ Texto: "", Validacion: null });
@@ -51,7 +51,7 @@ const FormRegi = (props) => {
   );
 };
 
-export default FormRegi;
+export default Formulario;
 
 const Form = styled.form`
   display: grid;
