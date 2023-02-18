@@ -5,11 +5,9 @@ import styled from "styled-components";
 
 const Publicaciones = () => {
   return (
-    <>
-      <Main>
-        <CharacterList />
-      </Main>
-    </>
+    <Main>
+      <CharacterList />
+    </Main>
   );
 };
 
@@ -19,7 +17,6 @@ export default Publicaciones;
 
 const Main = styled.div`
   display: flex;
-  justify-content: center;
   position: relative;
   width: 100%;
   top: 12vh;

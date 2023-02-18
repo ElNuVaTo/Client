@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Character from "./Character";
 import InfiniteScroll from "react-infinite-scroll-component";
+import styled from "styled-components";
 
 const CharacterList = () => {
   const [Publicaciones, SetPublicaciones] = useState([]);
@@ -36,17 +37,24 @@ const CharacterList = () => {
   };
 
   return (
-    <InfiniteScroll
-      dataLength={Publicaciones.length}
-      next={fetchMoreData}
-      hasMore={hasMore}
-      loader={<h4>Cargando...</h4>}
-    >
-      {Publicaciones.map((character) => {
-        return <Character character={character} key={character.id} />;
-      })}
-    </InfiniteScroll>
+    <Main>
+      <InfiniteScroll
+        dataLength={Publicaciones.length}
+        next={fetchMoreData}
+        hasMore={hasMore}
+        loader={<h4>Cargando...</h4>}
+      >
+        {Publicaciones.map((character) => {
+          return <Character character={character} key={character.id} />;
+        })}
+      </InfiniteScroll>
+    </Main>
   );
 };
 
 export default CharacterList;
+
+const Main = styled.div`
+  width: 100%;
+  height: 100%;
+`;
