@@ -8,7 +8,10 @@ import Publicaciones from './Publicaciones/Publicaciones'
 const Home = () => {
   return (
     <>
-      <Comentarios/>
+      <BarraSuperior/>
+      <BarraLateral/>
+      <Historia/>
+      <Publicaciones/>
     </>
   )
 }
