@@ -13,7 +13,7 @@ const Buttons = () => {
   };
   const HandleSubmit = () => {
     SetLike(!Like);
-    navigate("/Home");
+    navigate("/Comentarios");
     console.log('Like',Like);
   };
 
