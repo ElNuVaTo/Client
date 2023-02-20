@@ -562,10 +562,6 @@ and limitations under the License.
     max-width: 75px;
   }
   ${Ge.Desktop} {
-    width: 90%;
-    max-width: 180px;
-    min-width: 180px;
-
   }
 `,uw=_.button`
   display: flex;
@@ -616,6 +612,7 @@ and limitations under the License.
   }
   ${Ge.Desktop} {
     padding: 0;
+    width: 100%;
   }
 `,pw=({Name:e,Type:t,OnChange:n,Value:r})=>pe(mw,{children:[pe(gw,{children:[x(yw,{htmlFor:e,children:x(ww,{className:"bi bi-search"})}),x(vw,{id:e,name:e,type:t,onChange:n,value:r})]}),x(Sw,{children:x(xw,{className:"bi bi-heart"})})]}),wf="#252c47",hw="#4a86ffc7",mw=_.div`
   display: flex;
@@ -690,9 +687,7 @@ and limitations under the License.
     width: 15%;
   }
   ${Ge.Desktop} {
-    width: 15%;
-    min-width: 150px;
-    max-width: 230px;
+    width: 16%;
   }
 `,Pw=_.div`
   grid-area: 1 / 2 / 2 / 4; // Posicion
@@ -707,7 +702,7 @@ and limitations under the License.
     width: 85%;
   }
   ${Ge.Desktop} {
-    width: 85%;
+    width: 84%;
   }
 `,_w=_.div`
   grid-area: 2 / 1 / 4 / 4; // Posicion
@@ -718,18 +713,17 @@ and limitations under the License.
   z-index: 2;
   width: 100%;
   height: 93%;
+  opacity: 99%;
   margin-top: 55px;
   left: ${e=>e.Activo?"0":"-900px"};
   transition: left 0.5s ease-in-out; /* Agregar transición */
   ${Ge.Table} {
     width: 15%;
     min-width: 120px;
-    opacity: 98%;
   }
   ${Ge.Desktop} {
-    width: 15%;
-    min-width: 150px;
-    max-width: 230px;
+    width: 16%;
+    min-width: 230px;
   }
 `,Tw=_.div`
   grid-area: 2 / 1 / 3 / 4; // Posicion
@@ -851,4 +845,4 @@ _.div`
   display: flex;
   flex-direction: column;
   border: 1px solid white
-`,Hw=e=>{const[t,n]=O.useState(!1);return O.useEffect(()=>{n(!0),setTimeout(()=>{n(!1)},5e3)},[]),x(Ke,{children:x(uv,{children:pe(sv,{children:[x(ei,{path:"Client",element:x(fv,{}),loader:ql}),x(ei,{path:"Home",element:x(Ew,{}),loader:ql}),x(ei,{path:"Comentarios",element:x(jw,{}),loader:ql})]})})})};ss.createRoot(document.getElementById("root")).render(pe(kt.StrictMode,{children:[x(Qg,{}),x(Hw,{})]}));
+`,Hw=e=>{const[t,n]=O.useState(!1);return O.useEffect(()=>{n(!0),setTimeout(()=>{n(!1)},5e3)},[]),x(Ke,{children:x(uv,{basename:"/Client",children:pe(sv,{children:[x(ei,{path:"/",element:x(fv,{}),loader:ql}),x(ei,{path:"Home",element:x(Ew,{}),loader:ql}),x(ei,{path:"Comentarios",element:x(jw,{}),loader:ql})]})})})};ss.createRoot(document.getElementById("root")).render(pe(kt.StrictMode,{children:[x(Qg,{}),x(Hw,{})]}));
