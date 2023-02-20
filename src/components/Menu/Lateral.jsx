@@ -35,10 +35,6 @@ const Main = styled.div`
     max-width: 75px;
   }
   ${mediaQueries.Desktop} {
-    width: 90%;
-    max-width: 180px;
-    min-width: 180px;
-
   }
 `;
 

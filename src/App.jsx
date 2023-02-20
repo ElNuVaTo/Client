@@ -18,9 +18,9 @@ const App = (props) => {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Client">
         <Routes>
-          <Route path="Client" element={<Registrarse />} loader={Carga} />
+          <Route path="/" element={<Registrarse />} loader={Carga} />
           <Route path="Home" element={<Home />} loader={Carga} />
           <Route path="Comentarios" element={<Comentarios />} loader={Carga} />
         </Routes>

@@ -67,9 +67,7 @@ const DivButton = styled.div`
     width: 15%;
   }
   ${mediaQueries.Desktop} {
-    width: 15%;
-    min-width: 150px;
-    max-width: 230px;
+    width: 16%;
   }
 `;
 
@@ -86,7 +84,7 @@ const DivBarraSuperior = styled.div`
     width: 85%;
   }
   ${mediaQueries.Desktop} {
-    width: 85%;
+    width: 84%;
   }
 `;
 
@@ -99,18 +97,17 @@ const DivBarraLateral = styled.div`
   z-index: 2;
   width: 100%;
   height: 93%;
+  opacity: 99%;
   margin-top: 55px;
   left: ${(props) => (props.Activo ? "0" : "-900px")};
   transition: left 0.5s ease-in-out; /* Agregar transición */
   ${mediaQueries.Table} {
     width: 15%;
     min-width: 120px;
-    opacity: 98%;
   }
   ${mediaQueries.Desktop} {
-    width: 15%;
-    min-width: 150px;
-    max-width: 230px;
+    width: 16%;
+    min-width: 230px;
   }
 `;
 

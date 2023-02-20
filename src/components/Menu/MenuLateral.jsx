@@ -38,5 +38,6 @@ const Main = styled.div`
   }
   ${mediaQueries.Desktop} {
     padding: 0;
+    width: 100%;
   }
 `;
