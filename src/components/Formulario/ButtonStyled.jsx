@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonStyled = (props) => {
-  const { Text } = props;
+const ButtonStyled = ({ Text }) => {
   return (
     <Div>
-      <Input type="submit" value={Text} />
+      <Input type="submit" value={Text}/>
     </Div>
   );
 };

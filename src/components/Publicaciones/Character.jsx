@@ -45,13 +45,14 @@ const Section = styled.div`
 //!  Contenido padre
 const Main = styled.div`
   width: 100%;
+  justify-content: center;
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   &::after {
     content: "";
     display: flex;
     position: absolute;
-    bottom: -30px;
+    bottom: -20px;
     width: 100%;
     background: linear-gradient(
       100deg,
@@ -63,8 +64,7 @@ const Main = styled.div`
     padding: 0.8px;
   }
   ${mediaQueries.Table} {
-  }
-  ${mediaQueries.Desktop} {
+    width: 100%;
   }
 `;
 //! Publicaciones
@@ -74,15 +74,9 @@ const Contenido = styled.div`
   margin: auto;
   width: 100%;
   height: 100%;
+  max-width: 500px;
+  height: 500px;
   cursor: pointer;
-  ${mediaQueries.Table} {
-    width: 480px;
-    height: 480px;
-  }
-  ${mediaQueries.Desktop} {
-    width: 485px;
-    height: 485px;
-  }
 `;
 
 const Imagenes = styled.img`

@@ -1,21 +1,19 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-const Inputs = (props) => {
-  const {
-    Usuario,
-    Email,
-    Contraseña,
-    Confirmar,
-    SetUsuario,
-    SetEmail,
-    SetContraseña,
-    SetConfirmar,
-    ExpresionUser,
-    ExpresionEmail,
-    ExpresionContraseña,
-  } = props;
-
+const Inputs = ({
+  Usuario,
+  Email,
+  Contraseña,
+  Confirmar,
+  SetUsuario,
+  SetEmail,
+  SetContraseña,
+  SetConfirmar,
+  ExpresionUser,
+  ExpresionEmail,
+  ExpresionContraseña,
+}) => {
   //Capturar tecla y pasarlo al value
   const OnUsuario = (e) => {
     SetUsuario({ ...Usuario, Texto: e.target.value });

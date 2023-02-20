@@ -24,15 +24,21 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  margin: auto;
+  margin: 20px auto;
   width: 65%;
+  max-width: 200px;
+  min-width: 200px;
   border-radius: 15px;
   height: 50px;
   ${mediaQueries.Table} {
-    width: 75%;
+    min-width: 50px;
+    max-width: 75px;
   }
   ${mediaQueries.Desktop} {
-    width: 85%;
+    width: 90%;
+    max-width: 180px;
+    min-width: 180px;
+
   }
 `;
 
@@ -40,7 +46,6 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   gap: 0 20px;
-  margin: auto;
   background: transparent;
   border: none;
   align-items: center;
@@ -52,12 +57,6 @@ const Button = styled.button`
   :active {
     background-color: ${FondoClaro};
   }
-  ${mediaQueries.Table} {
-  }
-  ${mediaQueries.Desktop} {
-    justify-content: left;
-    padding: 0 20px;
-  }
 `;
 
 const Icono = styled.i`
@@ -68,15 +67,6 @@ const Icono = styled.i`
   font-size: 30px;
   height: 100%;
   left: 15px;
-  ${mediaQueries.Table} {
-    width: 100%;
-    left: 0;
-    justify-content: center;
-  }
-  ${mediaQueries.Desktop} {
-    justify-content: center;
-    width: 25%;
-  }
 `;
 
 const Text = styled.p`
@@ -84,12 +74,9 @@ const Text = styled.p`
   align-items: center;
   text-align: left;
   height: 100%;
-  width: 35%;
-
+ width: 5%;
+  min-width:50px;
   ${mediaQueries.Table} {
     display: none;
-  }
-  ${mediaQueries.Desktop} {
-    font-size: 20px;
   }
 `;

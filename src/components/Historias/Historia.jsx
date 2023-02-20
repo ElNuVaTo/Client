@@ -23,6 +23,7 @@ const Historia = () => {
 export default Historia;
 
 const Main = styled.div`
+  grid-area: 2 / 1 / 3 / 3;
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: 100%;
@@ -32,16 +33,9 @@ const Main = styled.div`
   align-items: center;
   position: relative;
   width: 95%;
-  height: 75px;
   margin: auto;
-  top: 12vh;
-  ${mediaQueries.Table} {
-  }
-  ${mediaQueries.Desktop} {
-    left: 20%;
-    width: 55%;
-    ::-webkit-scrollbar {
-      display: none;
-    }
+  height: 100%;
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;

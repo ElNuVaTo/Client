@@ -1,9 +1,7 @@
 import React from "react";
-import { mediaQueries } from "../../MediaQuery";
 import styled from "styled-components";
 
-const Superior = (props) => {
-  const { Name, Type, OnChange, Value } = props;
+const MenuSuperior = ({Name, Type, OnChange, Value}) => {
   return (
     <Main>
       <Div>
@@ -25,7 +23,7 @@ const Superior = (props) => {
   );
 };
 
-export default Superior;
+export default MenuSuperior;
 
 // Colores
 const FondoOscuro = "#1c2039";
@@ -40,13 +38,6 @@ const Main = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-around;
-  ${mediaQueries.Table} {
-  }
-  ${mediaQueries.Desktop} {
-    width: 90%;
-    margin: auto;
-    justify-content: space-between;
-  }
 `;
 
 // Contenedor del input
@@ -58,11 +49,6 @@ const Div = styled.div`
   height: 35px;
   position: relative;
   border-radius: 15px;
-  ${mediaQueries.Table} {
-    height: 40px;
-  }
-  ${mediaQueries.Desktop} {
-  }
 `;
 
 const Label = styled.label`

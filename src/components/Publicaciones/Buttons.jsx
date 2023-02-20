@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Buttons = () => {
   const [Like, SetLike] = useState(false);
   const [Comentarios, SetComentarios] = useState(false);
+  const navigate = useNavigate();
 
   const CommentsSubmit = () => {
     SetComentarios(!Comentarios);
@@ -11,8 +13,10 @@ const Buttons = () => {
   };
   const HandleSubmit = () => {
     SetLike(!Like);
+    navigate("/Home");
     console.log('Like',Like);
   };
+
   return (
     <>
       <DivSection1>

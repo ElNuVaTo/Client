@@ -1,7 +1,7 @@
 
 export const mediaQueries = {
-  Table: "@media (min-width: 500px) and (max-width: 900px)",
-  Desktop: "@media (min-width: 901px)",
+  Table: "@media (min-width: 700px) and (max-width: 1000px)",
+  Desktop: "@media (min-width: 1001px)",
 };
 // import { mediaQueries } from "../../MediaQuery";
 //    ${mediaQueries.Table} {}

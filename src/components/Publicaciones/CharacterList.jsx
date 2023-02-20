@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Character from "./Character";
 import InfiniteScroll from "react-infinite-scroll-component";
 import styled from "styled-components";
+import { mediaQueries } from "../../MediaQuery";
 
 const CharacterList = () => {
   const [Publicaciones, SetPublicaciones] = useState([]);
@@ -55,6 +56,9 @@ const CharacterList = () => {
 export default CharacterList;
 
 const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: auto;
   width: 100%;
   height: 100%;
 `;

@@ -3,13 +3,14 @@ import Inputs from "./Inputs";
 import styled from "styled-components";
 import ButtonStyled from "./ButtonStyled";
 import MensajeError from "./MensajeError";
+import { useNavigate } from "react-router-dom";
 
 const Formulario = (props) => {
   const [Usuario, SetUsuario] = useState({ Texto: "", Validacion: null });
   const [Email, SetEmail] = useState({ Texto: "", Validacion: null });
   const [Contraseña, SetContraseña] = useState({ Texto: "", Validacion: null });
   const [Confirmar, SetConfirmar] = useState({ Texto: "", Validacion: null });
-
+  const navigate = useNavigate();
   const ExpresionesRegulares = {
     Usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
     Email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -17,10 +18,19 @@ const Formulario = (props) => {
     Espacios: /^[^\s].*/,
   };
 
+
+
+
+
+
+
   const OnSubmit = (Event) => {
     Event.preventDefault();
+    navigate("/Home");
     console.log("Nice");
   };
+
+
 
   return (
     <>
@@ -38,7 +48,8 @@ const Formulario = (props) => {
           SetConfirmar={SetConfirmar}
           Confirmar={Confirmar}
         />
-        <ButtonStyled Text="Registrarse" />
+
+        <ButtonStyled Text="Registrarse"/>
 
         <MensajeError
         Usuario={Usuario}
