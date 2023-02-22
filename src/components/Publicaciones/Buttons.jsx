@@ -9,11 +9,11 @@ const Buttons = () => {
 
   const CommentsSubmit = () => {
     SetComentarios(!Comentarios);
+    navigate("/Comentarios");
     console.log('Comentarios',Comentarios);
   };
   const HandleSubmit = () => {
     SetLike(!Like);
-    navigate("/Comentarios");
     console.log('Like',Like);
   };
 

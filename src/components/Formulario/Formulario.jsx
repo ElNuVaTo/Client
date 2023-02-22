@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Inputs from "./Inputs";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ButtonStyled from "./ButtonStyled";
 import MensajeError from "./MensajeError";
 import { useNavigate } from "react-router-dom";
@@ -64,6 +64,11 @@ const Formulario = (props) => {
 
 export default Formulario;
 
+const FondoOscuro = "#240539";
+const FondoClaro = "#8887B3";
+
+
+
 const Form = styled.form`
   display: grid;
   align-items: center;
@@ -78,9 +83,9 @@ const Form = styled.form`
     content: "";
     position: absolute;
     height: 100%;
-    right: 0;
+    right: 10px;
     top:0;
-    background: linear-gradient(100deg, #1c2039 0%, #adadad 50%, #1c2039 70%);
+    background: linear-gradient(100deg, #0D0C1D 0%, #161B33 50%, #0D0C1D 70%);
     opacity: 50%;
     padding: 0.8px;
   }
@@ -88,9 +93,9 @@ const Form = styled.form`
     content: "";
     position: absolute;
     height: 100%;
-    left: 0;
+    left: 10px;
     transform: rotate(180deg);
-    background: linear-gradient(100deg, #1c2039 0%, #adadad 50%, #1c2039 70%);
+    background: linear-gradient(100deg, #0D0C1D 0%, #161B33 50%, #0D0C1D 70%);
     opacity: 50%;
     padding: 0.8px;
   }

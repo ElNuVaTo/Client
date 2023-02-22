@@ -18,7 +18,7 @@ const Lateral = ({ Texto, ClassIcon }) => {
 export default Lateral;
 
 const FondoOscuro = "#1c2039";
-const FondoClaro = "#252c47";
+const FondoClaro = "#474973";
 
 const Main = styled.div`
   display: flex;

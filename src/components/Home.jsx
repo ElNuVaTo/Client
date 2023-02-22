@@ -42,9 +42,8 @@ const Home = () => {
 
 export default Home;
 
-const FondoOscuro = "#1c2039";
-const FondoClaro = "#252c47";
-const Blanco = "#adadad";
+const FondoOscuro = "#12162b";
+const FondoClaro = "#DDDDE1";
 
 const Main = styled.div`
   display: grid;
@@ -59,15 +58,15 @@ const DivButton = styled.div`
   grid-area: 1 / 1 / 2 / 2; // Posicion
   position: fixed;
   display: flex;
-  background-color: ${FondoOscuro};
   z-index: 2;
   width: 20%;
   height: 55px;
   ${mediaQueries.Table} {
-    width: 15%;
+    width: 13%;
   }
   ${mediaQueries.Desktop} {
-    width: 16%;
+    width: 230px;
+    z-index: 3;
   }
 `;
 
@@ -75,16 +74,16 @@ const DivBarraSuperior = styled.div`
   grid-area: 1 / 2 / 2 / 4; // Posicion
   position: fixed;
   display: flex;
-  background-color: ${FondoOscuro};
   z-index: 2;
   height: 55px;
   width: 80%;
   right: 0;
+  background-color: ${FondoOscuro};
   ${mediaQueries.Table} {
-    width: 85%;
+    width: 87%;
   }
   ${mediaQueries.Desktop} {
-    width: 84%;
+    width: 100%;
   }
 `;
 
@@ -97,17 +96,15 @@ const DivBarraLateral = styled.div`
   z-index: 2;
   width: 100%;
   height: 93%;
-  opacity: 99%;
   margin-top: 55px;
   left: ${(props) => (props.Activo ? "0" : "-900px")};
   transition: left 0.5s ease-in-out; /* Agregar transición */
   ${mediaQueries.Table} {
-    width: 15%;
+    width: 13%;
     min-width: 120px;
   }
   ${mediaQueries.Desktop} {
-    width: 16%;
-    min-width: 230px;
+    width: 230px;
   }
 `;
 
@@ -121,11 +118,9 @@ const DivHistoria = styled.div`
   height: 100px;
   ${mediaQueries.Table} {
     width: 80%;
-
   }
   ${mediaQueries.Desktop} {
     width: 55%;
-
   }
 `;
 const DivCharacterList = styled.div`
@@ -134,5 +129,5 @@ const DivCharacterList = styled.div`
   width: 100%;
   ::-webkit-scrollbar {
     display: none;
-}
+  }
 `;

@@ -152,6 +152,11 @@ const Inputs = ({
 
 export default Inputs;
 
+const Border = "#57587a";
+const FondoClaro = "#474973";
+// #4C468F
+// #554789
+
 // Posicionar inputs
 
 const PosicionUsuario = styled.div`
@@ -187,6 +192,7 @@ const Icons = styled.i`
   width: 100%;
   font-size: 22px;
   align-items: center;
+  z-index: 3;
 `;
 const Label = styled.label`
   height: 100%;
@@ -202,22 +208,22 @@ const Input = styled.input`
   outline: none;
   border: none;
   padding: 0 35px 0 10px;
-  background-color: #252c47;
+  background-color: ${FondoClaro};
+  border: 2px solid ${Border} ;
   &:focus {
-    border: 2px solid #4a86ffc7;
   }
 
   ${(props) =>
     props.StyledValidacion === true &&
     css`
       background: #0edb4323;
-      border: 2px solid #0edb75 !important;
+      border: 2px solid #0edb4b !important;
     `}
 
   ${(props) =>
     props.StyledValidacion === false &&
     css`
-      background: #f53d4323;
-      border: 2px solid #f2384b !important;
+      background: #f53d434b;
+      border: 2px solid #f5253a !important;
     `}
 `;

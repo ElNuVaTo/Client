@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { mediaQueries } from "../../MediaQuery";
 
 const MenuSuperior = ({Name, Type, OnChange, Value}) => {
   return (
     <Main>
       <Div>
+        
         <Label htmlFor={Name}>
           <Icon className="bi bi-search"></Icon>
         </Label>
+
         <Input
           id={Name}
           name={Name}
@@ -16,19 +19,15 @@ const MenuSuperior = ({Name, Type, OnChange, Value}) => {
           value={Value}
         />
       </Div>
-      <Button>
+      {/* <Button>
         <Icono className="bi bi-heart"></Icono>
-      </Button>
+      </Button> */}
     </Main>
   );
 };
 
 export default MenuSuperior;
 
-// Colores
-const FondoOscuro = "#1c2039";
-const FondoClaro = "#252c47";
-const Focus = "#4a86ffc7";
 
 // Contenido Padre
 
@@ -38,6 +37,11 @@ const Main = styled.div`
   height: 100%;
   align-items: center;
   justify-content: space-around;
+  ${mediaQueries.Desktop} {
+    width: 100%;
+    justify-content: center;
+  }
+
 `;
 
 // Contenedor del input
@@ -45,7 +49,7 @@ const Main = styled.div`
 const Div = styled.div`
   display: flex;
   width: 72%;
-  max-width: 650px;
+  max-width: 600px;
   height: 35px;
   position: relative;
   border-radius: 15px;
@@ -57,6 +61,11 @@ const Label = styled.label`
   height: 100%;
 `;
 
+
+// Colores
+const Border = "#57587a";
+const FondoClaro = "#474973";
+
 const Input = styled.input`
   width: 100%;
   height: 100%;
@@ -65,9 +74,9 @@ const Input = styled.input`
   padding: 0 15px 0 48px;
   border-radius: 15px;
   background-color: ${FondoClaro};
-  border: 2px solid ${FondoClaro};
+  border: 2px solid ${Border} ;
   &:focus {
-    border: 2px solid ${Focus};
+
   }
 `;
 const Icon = styled.i`
@@ -80,7 +89,6 @@ const Icon = styled.i`
   height: 100%;
   font-size: 16px;
   border-radius: 15px 0 0 15px;
-  background-color: #7182da16;
 `;
 
 // Notificaciones

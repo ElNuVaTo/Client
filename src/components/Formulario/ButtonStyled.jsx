@@ -11,6 +11,11 @@ const ButtonStyled = ({ Text }) => {
 
 export default ButtonStyled;
 
+const FondoOscuro = "#474973";
+const FondoClaro = "#232735";
+const White = "#f2f2f2";
+
+
 const Div = styled.div`
   display: flex;
   grid-area: 9 / 1 / 10 / 2;
@@ -27,12 +32,9 @@ const Input = styled.input`
   font-size: 20px;
   cursor: pointer;
   background: transparent;
-  border: 3px solid transparent;
-  border-color: #262b49 transparent #262b49 transparent;
   transition: 0.25s linear;
+  border-radius: 10px;
   &:hover {
-    border-radius: 10px;
-    border-color: #262b49;
-    background: #262b49;
+    background: ${FondoOscuro};
   }
 `;

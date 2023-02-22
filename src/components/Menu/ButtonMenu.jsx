@@ -13,13 +13,13 @@ const ButtonMenu = ({ onClick }) => {
 
 export default ButtonMenu;
 
-const FondoOscuro = "#1c2039";
 
 const Button = styled.button`
   width: 100%;
   height: 100%;
-  background-color: ${FondoOscuro};
   border: none;
+  outline: none;
+  background-color: #12162b;
 `;
 
 const Menu = styled.i`
